@@ -46,7 +46,6 @@ buscar2(`Juan`);
 
 // 5) eliminarPersonas x DNI
 
-// const nroIndice=personas.findIndex(c => c==DNI);
 const buscar3=(DNI)=>{
     const encontrada = personas.findIndex(p=>p.DNI==DNI)
     console.log(encontrada);
