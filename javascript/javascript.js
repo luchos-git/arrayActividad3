@@ -13,14 +13,22 @@ let personas=[
 
 
 
-// 1) mostrarPersonas
+// 1) mostrarPersonas()
 
-personas.forEach(p=>console.log(p.nombre));
+const mostrarPersonas = () => {
+    personas.forEach(p=>console.log(p.nombre, p.edad, p.DNI));
+}
+mostrarPersonas();
 
-// 2) agregarPersonas x DNI
 
-personas.push(p={nombre: `Luciano Nahir Trevissan`, edad: 18, DNI: 48181723});
-personas.forEach(p=>console.log(p));
+// 2) agregarPersonas
+
+const agregarPersonas = (nombre, edad, DNI) => {
+    personas.push({nombre, edad, DNI});
+    personas.forEach(p=>console.log(p));
+}
+agregarPersonas(`Luciano Nahir Trevissan`, 18, 48181723);
+
 
 // 3) buscarPersona x DNI
 
@@ -48,12 +56,32 @@ buscar2(`Juan`);
 
 const buscar3=(DNI)=>{
     const encontrada = personas.findIndex(p=>p.DNI==DNI)
-    console.log(encontrada);
+    if (encontrada >= 0){
+        console.log(encontrada);
+        personas.splice(personas.DNI, 1);
+        console.log(`${encontrada} fue eliminad@.`)
+    }
+    else{
+        console.log(`Ese usuario no existe`);
+    }
+    
 };
 buscar3(44);
-
-personas.splice(personas.DNI, 1);
-console.log(personas);
+console.log(personas); //verificacion
 
 // 6) modificarDatos x DNI
 
+const modificarDatos = (DNI) => {
+    const encontrada = personas.findIndex(p=>p.DNI==DNI);
+    if(encontrada >= 0){
+    console.log(encontrada);
+    // personas[encontrada] = "Lucas", 44, 100000000;
+    personas.splice(encontrada, 1, { nombre: "Lucas", edad: 30, DNI: 4});
+    console.log(personas[encontrada]);
+    }
+    else{
+        console.log(`No se encontro el usuario`);
+    }
+    
+}
+modificarDatos(66);
