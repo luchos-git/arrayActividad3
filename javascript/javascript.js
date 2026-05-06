@@ -76,7 +76,7 @@ const modificarDatos = (DNI, nuevoNombre, nuevaEdad) => {
     if(encontrada >= 0){
     console.log(encontrada);
     // personas[encontrada] = "Lucas", 44, 100000000;
-    personas.splice(encontrada, 1, { nuevoNombre, nuevaEdad, DNI});
+    personas.splice(encontrada, 1, {nuevoNombre, nuevaEdad, DNI});
     console.log(personas[encontrada]);
     }
     else{
