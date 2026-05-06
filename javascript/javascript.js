@@ -71,12 +71,12 @@ console.log(personas); //verificacion
 
 // 6) modificarDatos x DNI
 
-const modificarDatos = (DNI) => {
+const modificarDatos = (DNI, nuevoNombre, nuevaEdad) => {
     const encontrada = personas.findIndex(p=>p.DNI==DNI);
     if(encontrada >= 0){
     console.log(encontrada);
     // personas[encontrada] = "Lucas", 44, 100000000;
-    personas.splice(encontrada, 1, { nombre: "Lucas", edad: 30, DNI: 4});
+    personas.splice(encontrada, 1, { nuevoNombre, nuevaEdad, DNI});
     console.log(personas[encontrada]);
     }
     else{
@@ -84,4 +84,4 @@ const modificarDatos = (DNI) => {
     }
     
 }
-modificarDatos(66);
+modificarDatos(66, "Juana", 25);
